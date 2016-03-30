@@ -1,0 +1,55 @@
+@import url(https://fonts.googleapis.com/css?family=Amatic+SC);
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+header {
+  padding: 20px 0;
+  background-color: pink;
+}
+
+.left {
+	align: left;
+}
+
+fontDressme {
+	font-family: 'Amatic SC', sans-serif;
+}
+
+.pink-background {
+	background-color: pink;
+}
+
+.dressme-header {
+	font-family: 'Amatic SC', 'Roboto', sans-serif;
+	font-size: xx-large;
+	color: black;
+}
+/* header div {
+height: 200%;
+ }
+
+ .vcenter {
+ 	display: flex;
+ 	flex-direction: row;
+ }
+
+ .vcenter > [class^="col-"],
+  .vcenter > [class*="col-"]{
+  	display: flex;
+  	align-items: center;
+    justify-content: space-between;
+  }
+
+  .vcenter > nav {
+  	justify-content: right;
+  }
+
+  .pull-center {
+  	display: inline-block;
+  	vertical-align: middle;
+  	float: none;
+  }*/
