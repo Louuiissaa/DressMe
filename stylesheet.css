@@ -13,10 +13,11 @@ header {
 
 .left {
 	align: left;
+	-left:  0px;
 }
 
 fontDressme {
-	font-family: 'Amatic SC', sans-serif;
+	font-family: 'Amatic SC', 'Roboto', sans-serif;
 }
 
 .pink-background {
