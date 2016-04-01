@@ -59,6 +59,8 @@
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
@@ -76,7 +78,101 @@
 
   <body>
 
-    <nav class="navbar navbar-fixed-top pink-background">
+  <!--nav class="navbar navbar-inverse pink-background">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand dressme-header" href="#">DressMe</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+      	<li><input type="text" placeholder="Username" class="form-control vertical-center"></li>
+        <li><input type="password" placeholder="Password" class="form-control vertical-center"></li>
+        <li><button type="submit" class="btn btn-default vertical-center">Sign in</button></li>
+      </ul>
+    </div>
+  </div>
+</nav-->
+
+<div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header"><a class="navbar-brand fontDressme" href="#">DressMe</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-menubuilder">
+            <ul class="nav navbar-nav navbar-right">
+                <li><input type="text" placeholder="Username" class="form-control vertical-center">
+                </li>
+                <li><input type="password" placeholder="Password" class="form-control vertical-center">
+                </li>
+                <li><button type="submit" class="btn btn-default vertical-center" >Sign in</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!--div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header"><a class="navbar-brand fontDressme" href="#">DressMe</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-menubuilder">
+            <ul class="nav navbar-nav navbar-right">
+                <li><input type="text" placeholder="Username" class="form-control vertical-center">
+                </li>
+                <li><input type="password" placeholder="Password" class="form-control vertical-center">
+                </li>
+                <li><button type="submit" class="btn btn-default vertical-center" >Sign in</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div-->
+
+<!--DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Case</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav id="custom-bootstrap-menu" class="navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand fontDressme" href="#">DressMe</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><input type="text" placeholder="Username" class="form-control vertical-center"></li>
+        <li><input type="password" placeholder="Password" class="form-control vertical-center"></li>
+        <li><button type="submit" class="btn btn-default vertical-center">Sign in</button></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+</body>
+</html-->
+
+
+    <!--nav class="navbar navbar-fixed-top pink-background">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -95,64 +191,37 @@
             <div class="form-group">
               <input type="password" placeholder="Password" class="form-control">
             </div>
-            <button type="submit" class="btn btn-default">Sign in</button>
+            <div >
+            	<button type="submit" class="btn btn-default ">Sign in</button>
+            </div>
+            </div>
           </form>
         </div><!--/.navbar-collapse -->
-      </div>
+      <!--/div>
     </nav>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1><fontDressme>DressMe </fontDressme>   <small>  Your virtual wardrobe</small></h1>
-        <p>
-        	<!--form class="navbar-form navbar-left">
-        		<p>
-        		<div class="row">
-        				<div class="navbar-form navbar-left form-group col-sm-11">
-        				<div class="col-sm-6">
-            				<input type="text" placeholder="Vorname" class="form-control">
-            				</div>
-            				<div class="col-sm-6">
-            				<input type="text" placeholder="Nachname" class="form-control">
-            				</div>
-            			</div>
-            	</p>
-            	<p>
-        				<div class="navbar-form navbar-left form-group col-sm-12">
-            				<input type="text" placeholder="Username" class="form-control">
-            			</div>
-            		</form>
-            	</p>
-            	<p>
-        				<div class="navbar-form navbar-left form-group col-sm-12">
-            				<input type="text" placeholder="Password" class="form-control">
-            			</div>
-            	</p>
-            	<p>
-            			<div class="navbar-form navbar-left form-group col-sm-12">
-            				<button type="submit" class="btn btn-lg pink-background left">Sign Up &raquo;</button>
-            			</div>
-            	</p>
-            </form-->
+        <h1><fontDressme>DressMe </fontDressme>   <smallh1>  Your virtual wardrobe</smallh1></h1>
             <form>
             <div class="fluid-container">
             		<div class="row">
-            			<div class="col-md-2">
-            				<input type="text" placeholder="Vorname" class="form-control" style="margin: 2.5%;">
+            			<div class="col-xs-6 col-sm-1 col-md-2">
+            				<input type="text" placeholder="Vorname" class="form-control signup-input">
             			</div>
-            			<div class="col-md-2">
-            				<input type="text" placeholder="Nachname" class="form-control" style="margin: 2.5%;">
-            			</div>
-            		</div>
-            		<div class="row">
-            			<div class="col-md-4">
-            				<input type="text" placeholder="Username" class="form-control" style="margin: 2.5%;">
+            			<div class="col-xs-6 col-sm-1 col-md-2">
+            				<input type="text" placeholder="Nachname" class="form-control signup-input" >
             			</div>
             		</div>
             		<div class="row">
-            			<div class="col-md-4">
-            				<input type="text" placeholder="Password" class="form-control" style="margin: 2.5%;">
+            			<div class="col-xs-12 col-sm-2 col-md-4">
+            				<input type="text" placeholder="Username" class="form-control signup-input" >
+            			</div>
+            		</div>
+            		<div class="row">
+            			<div class="col-xs-12 col-sm-2 col-md-4">
+            				<input type="password" placeholder="Password" class="form-control signup-input">
             			</div>
             		</div>
             		<div class="row">
@@ -162,7 +231,6 @@
             		</div>
             		</div>
             </form>
-        </p>
       </div>
     </div>
 
