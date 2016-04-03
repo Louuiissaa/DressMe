@@ -84,6 +84,7 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
             </button>
         </div>
+        <form method="POST" action="login.php">
         <div class="collapse navbar-collapse navbar-menubuilder">
             <ul class="nav navbar-nav navbar-right">
                 <li><input type="text" placeholder="Username" class="form-control vertical-center">
@@ -94,6 +95,7 @@
                 </li>
             </ul>
         </div>
+        </form>
     </div>
 </div>
 
@@ -101,29 +103,29 @@
     <div class="jumbotron">
       <div class="container">
         <h1><fontDressme>DressMe </fontDressme>   <smallh1>  Your virtual wardrobe</smallh1></h1>
-            <form>
+            <form method="POST" action="register.php">
             <div class="fluid-container">
             		<div class="row">
             			<div class="col-xs-6 col-sm-3 col-md-2">
-            				<input type="text" placeholder="Vorname" class="form-control signup-input">
+            				<input type="text" placeholder="Vorname" name ="firstname" class="form-control signup-input">
             			</div>
             			<div class="col-xs-6 col-sm-3 col-md-2">
-            				<input type="text" placeholder="Nachname" class="form-control signup-input" >
+            				<input type="text" placeholder="Nachname" name="lastname" class="form-control signup-input" >
             			</div>
             		</div>
             		<div class="row">
             			<div class="col-xs-12 col-sm-6 col-md-4">
-            				<input type="text" placeholder="Username" class="form-control signup-input" >
+            				<input type="text" placeholder="Username" name="username" class="form-control signup-input" >
             			</div>
             		</div>
             		<div class="row">
             			<div class="col-xs-12 col-sm-6 col-md-4">
-            				<input type="password" placeholder="Password" class="form-control signup-input">
+            				<input type="password" placeholder="Password" name="password" class="form-control signup-input">
             			</div>
             		</div>
             		<div class="row">
             			<div class=" col-sm-4 col-md-4">
-            				<button type="submit" class="btn btn-lg pink-background left">Sign Up &raquo;</button>
+            				<button type="submit" class="btn btn-lg pink-background left" onclick="FensterOeffnen">Sign Up &raquo;</button>
             			</div>
             		</div>
             		</div>
@@ -149,44 +151,7 @@
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
 
-<?php
-    include 'zugriff.php';
-    $dz = @mysql_connect(MYSQL_HOST,MYSQL_USER,MYSQL_PASS) 
-      OR die('Verbindung fehlgeschlagen');
-    mysql_select_db(MYSQL_DATABASES) 
-      OR die('Konnte Datenbank nicht benutzen');
-    $sql_befehl = "CREATE TABLE IF NOT EXISTS Beitrag (
-      ID        INT AUTO_INCREMENT PRIMARY KEY,
-      Name      VARCHAR(30),
-      eMail     VARCHAR(70),
-      HP        VARCHAR(70),
-      IP        VARCHAR(16),
-      Zeit      INT(11),
-      Beitrag   TEXT,
-      Kommentar TEXT
-    )";
-    if (mysql_query($sql_befehl)) {
-      echo "Datenbanktabelle erfolgreich angelegt.<br>" ;  
-    } else {
-      echo "Datenbanktabelle konnte nicht angelegt werden!<br>" ;
-    }
-    $sql_befehl = "CREATE TABLE IF NOT EXISTS Spam (
-      ID     INT AUTO_INCREMENT PRIMARY KEY,
-      Zeit   INT(11),
-      CODE   VARCHAR(6)
-    )" ;
-    if (mysql_query($sql_befehl)) {
-      echo "Datenbanktabelle erfolgreich angelegt.<br>" ;  
-    } else {
-      echo "Datenbanktabelle konnte nicht angelegt werden!<br>" ;
-    }
-    @mysql_close($dz);
-  ?> 
 
-  ... hier folgt weiterer Code ...
-  <?php
-    @mysql_close($dz);
-  ?> 
 
   </body>
 </html>
