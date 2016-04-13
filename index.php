@@ -1,46 +1,3 @@
-<!--doctype html>
-<html>
-  <head>
-    
-
-    <!-- Latest compiled and minified CSS -->
-	<!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"-->
-
-	<!-- Optional theme -->
-	<!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous"-->
-
-	<!-- Latest compiled and minified JavaScript -->
-	<!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-	<link href="stylesheet.css" rel="stylesheet">
-  </head>
-  <body>
-
-    <script src="jquery.min.js"></script>
-    <script src="app.js"></script>
-    
-
-	<header class="container">
-  		<div class="row">
-  			<div class="col-xs-7 pull-center">
-    			<h1>DressMe <small>Dein interaktiver Kleiderschrank</small></h1>
-    		</div>
-    		<nav class="col-xs-4 pull-center" style="text-align: right;">
-      			<button type="button" class="btn btn-default">Sign In</button>
-      		</nav>
-  		</div>
-  	</header>
-
-  	<div class="container">
-  	</div>
-
-	<footer class="container">
-    <div class="row">
-      <p class="col-sm-4">&copy; 2016 Louisa Pabst
-      </p>
-    </div>
-  </footer>
-  </body>
-</html--> 
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -87,11 +44,11 @@
         <form method="POST" action="login.php">
         <div class="collapse navbar-collapse navbar-menubuilder">
             <ul class="nav navbar-nav navbar-right">
-                <li><input type="text" placeholder="Username" class="form-control vertical-center">
+                <li><input type="text" placeholder="Username" name="username" class="form-control vertical-center">
                 </li>
-                <li><input type="password" placeholder="Password" class="form-control vertical-center">
+                <li><input type="password" placeholder="Password" name="password" class="form-control vertical-center">
                 </li>
-                <li><button type="submit" class="btn btn-default vertical-center" >Sign in</button>
+                <li><button type="submit" class="btn btn-default vertical-center" onclick="FensterOeffnen">Sign in</button>
                 </li>
             </ul>
         </div>
@@ -103,35 +60,57 @@
     <div class="jumbotron">
       <div class="container">
         <h1><fontDressme>DressMe </fontDressme>   <smallh1>  Your virtual wardrobe</smallh1></h1>
-            <form method="POST" action="register.php">
-            <div class="fluid-container">
-            		<div class="row">
-            			<div class="col-xs-6 col-sm-3 col-md-2">
-            				<input type="text" placeholder="Vorname" name ="firstname" class="form-control signup-input">
-            			</div>
-            			<div class="col-xs-6 col-sm-3 col-md-2">
-            				<input type="text" placeholder="Nachname" name="lastname" class="form-control signup-input" >
-            			</div>
-            		</div>
-            		<div class="row">
-            			<div class="col-xs-12 col-sm-6 col-md-4">
-            				<input type="text" placeholder="Username" name="username" class="form-control signup-input" >
-            			</div>
-            		</div>
-            		<div class="row">
-            			<div class="col-xs-12 col-sm-6 col-md-4">
-            				<input type="password" placeholder="Password" name="password" class="form-control signup-input">
-            			</div>
-            		</div>
-            		<div class="row">
-            			<div class=" col-sm-4 col-md-4">
-            				<button type="submit" class="btn btn-lg pink-background left" onclick="FensterOeffnen">Sign Up &raquo;</button>
-            			</div>
-            		</div>
-            		</div>
-            </form>
+        <form method="POST" action="register.php">
+          <div class="fluid-container border">
+            <div class="row">
+              <div class="col-xs-6 col-sm-3 col-md-2">
+            	 <input type="text" placeholder="Vorname" name ="firstname" class="form-control signup-input">
+              </div>
+              <div class="col-xs-6 col-sm-3 col-md-2">
+            	 <input type="text" placeholder="Nachname" name="lastname" class="form-control signup-input" >
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-4">
+            	 <input type="text" placeholder="Username" name="username" class="form-control signup-input" >
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-4">
+            	 <input type="password" placeholder="Password" name="password" class="form-control signup-input">
+              </div>
+            </div>
+            <div class="row">
+              <div class=" col-sm-4 col-md-4">
+            	 <button type="submit" class="btn btn-lg pink-background left" onclick="FensterOeffnen">Sign Up &raquo;</button>
+              </div>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
+
+
+    <!--div id="container">
+  <div id="header">
+    <div id="links">
+      <ul>
+        <li>Navigation</li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+      </ul>
+    </div>
+
+    <div id="rechts">
+
+    </div>
+  </div>
+  <div id="inhalt">
+
+  </div>
+</div-->
 
       <hr>
 
