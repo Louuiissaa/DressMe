@@ -37,7 +37,12 @@ hcarousel {
 
 fontDressme {
 	font-family: 'Amatic SC', 'Roboto', sans-serif;
-	font-size: 150%;
+	font-size: 170%;
+}
+
+spanunterschrift {
+  font-family: 'Roboto', sans-serif;
+  font-size: 110%;
 }
 
 .pink-background {
@@ -62,7 +67,21 @@ fontDressme {
 }
 
 .a-menu {
+  color: rgb(119, 119, 119);
+  margin-left: 20px;
+}
+
+.a-menu:hover {
   color: #000;
+  margin-left: 20px;
+}
+
+.gallery-margin {
+  margin-bottom: 10px;
+}
+
+.pagination>li>a, .pagination>li>span {
+  color: #FEC0CB;
 }
 
 .navbar-default {
@@ -108,20 +127,18 @@ fontDressme {
     background-color: #888;
 }
 
-/* CUSTOMIZE THE CAROUSEL
--------------------------------------------------- */
 
 /* Carousel base class */
 .carousel {
   height: 500px;
   margin-bottom: 60px;
 }
-/* Since positioning the image, we need to help out the caption */
+/* Helping out the caption */
 .carousel-caption {
   z-index: 10;
 }
 
-/* Declare heights because of positioning of img element */
+/* Declaring heights because of positioning of img element */
 .carousel .item {
   height: 500px;
   background-color: #777;
@@ -154,4 +171,10 @@ fontDressme {
     padding-top: 12px;
     padding-bottom: 12px;
   }
+}
+
+
+/*Tags Input */
+.label-info {
+    background-color: pink;
 }

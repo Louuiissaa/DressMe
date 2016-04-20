@@ -23,6 +23,10 @@
 
   <link href="stylesheet.css" rel="stylesheet">
 
+  <?php
+    include 'loginCheck.php';
+  ?>
+
   </head>
 
   <body>
@@ -41,7 +45,7 @@
                 </li>
                 <li><a href="#" class="header_font">Settings</a>
                 </li>
-                <li><a href="#" class="header_font">Log Out <span class="glyphicon glyphicon-log-out"></span></a>
+                <li><a href="logout.php" class="header_font">Log Out <span class="glyphicon glyphicon-log-out"></span></a>
                 </li>
             </ul>
         </div>
@@ -67,19 +71,19 @@
           <ul class="nav navbar-nav">
             <li>
               <a href="#" class="btn-1" data-toggle="collapse" data-target="#submenu1" aria-expanded="false" aria-controls="btn-1">Tops</a>
-              <ul class="nav-collapse collapse" id="submenu1" role="menu" aria-labelledby="btn-1">
-                <li><a href="#">T-Shirt and Tanks</a></li>
-                <li><a href="#">Hoodies</a></li>
+              <ul class="nav collapse" id="submenu1" role="menu" aria-labelledby="btn-1">
+                <li><a class="a-menu" href="#">&raquo; T-Shirt and Tanks</a></li>
+                <li><a class="a-menu" href="#">&raquo; Hoodies</a></li>
               </ul>
             </li>
             <li>
               <a href="#" class="btn-2" data-toggle="collapse" data-target="#submenu2" aria-expanded="false" aria-controls="btn-2">Bottoms</a>
-              <ul class="nav-collapse collapse" id="submenu2" role="menu" aria-labelledby="btn-2">
-                <li><a href="#">Jeans</a></li>
-                <li><a href="#">Skirts</a></li>
+              <ul class="nav collapse" id="submenu2" role="menu" aria-labelledby="btn-2">
+                <li><a class="a-menu" href="#">&raquo; Jeans</a></li>
+                <li><a class="a-menu" href="#">&raquo; Skirts</a></li>
               </ul>
             </li>
-            <li><a href="#">Menu Item 4</a></li>
+            <li><a href="hinzufuegen.php">Kleidungsstück hinzufügen</a></li>
             <li><a href="#">Reviews</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -87,8 +91,109 @@
     </div>
     </nav>
   </div>
+
   <div class="col-sm-9">
-    Main content goes here
+    <div class="container">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <fontDressMe>T-Shirt and Tanks</fontDressMe>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        <div class="row gallery-margin">
+            <div class="col-xs-9 col-sm-3 col-md-3 portfolio-item gallery-margin">
+                <a href="#">
+                    <img class="img-responsive" src="img_get.php?id=1" alt="">
+                </a>
+            </div>
+            <div class="col-xs-9 col-sm-3 col-md-3 portfolio-item gallery-margin">
+                <a href="#">
+                    <img class="img-responsive" src="GlitzerSchuh.png" alt="">
+                </a>
+            </div>
+            <div class="col-xs-9 col-sm-3 col-md-3 portfolio-item gallery-margin">
+                <a href="#">
+                    <img class="img-responsive" src="<?php include "img_get.php";?>" alt="">
+                </a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        <div class="row gallery-margin">
+            <div class="col-xs-9 col-sm-3 col-md-3 portfolio-item gallery-margin">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                </a>
+            </div>
+            <div class="col-xs-9 col-sm-3 col-md-3 portfolio-item gallery-margin">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                </a>
+            </div>
+            <div class="col-xs-9 col-sm-3 col-md-3 portfolio-item gallery-margin">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                </a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        <div class="row gallery-margin">
+            <div class="col-xs-9 col-sm-3 col-md-3 portfolio-item gallery-margin">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                </a>
+            </div>
+            <div class="col-xs-9 col-sm-3 col-md-3 portfolio-item gallery-margin">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                </a>
+            </div>
+            <div class="col-xs-9 col-sm-3 col-md-3 portfolio-item gallery-margin">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                </a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Pagination -->
+        <div class="row text-center">
+            <div class="col-sm-9 col-lg-9">
+                <ul class="pagination">
+                    <li>
+                        <a class="pagination-design" href="#">&laquo;</a>
+                    </li>
+                    <li>
+                        <a class="pagination-design" href="#">1</a>
+                    </li>
+                    <li>
+                        <a class="pagination-design" href="#">2</a>
+                    </li>
+                    <li>
+                        <a class="pagination-design" href="#">3</a>
+                    </li>
+                    <li>
+                        <a class="pagination-design" href="#">4</a>
+                    </li>
+                    <li class="pagination-design" >
+                        <a class="pagination-design" href="#">5</a>
+                    </li>
+                    <li>
+                        <a class="pagination-design" href="#">&raquo;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.row -->
   </div>
 </div>
 
@@ -104,11 +209,11 @@
       <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script-->
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!--script src="../../dist/js/bootstrap.min.js"></script-->
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <!--script src="../../assets/js/ie10-viewport-bug-workaround.js"></script-->
 
 
 

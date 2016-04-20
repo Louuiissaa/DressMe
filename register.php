@@ -1,13 +1,9 @@
 <?php
-require_once('./zugriff.php');
 $table = "USER";
 
-$db = new PDO('mysql:host=localhost;dbname=DressMe;charset=utf8mb4', 'benutzer', '12345');
-
-$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+//Database Connection
+include ("dbzugriff.php");
     try {
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //Error Handling
-
         $sql = "CREATE table IF NOT EXISTS $table(
      			Firstname VARCHAR( 50 ) NOT NULL, 
      			Lastname VARCHAR( 250 ) NOT NULL,
@@ -32,10 +28,23 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
     	$password  = $_POST["password"];
     	$salt_str = 'DressMeGeheim2306';
  		$gesaltetes_passwort = md5($salt_str . $password);
-    	$stmt->execute();
+    	$exstmt = $stmt->execute();
     
+    	if($exstmt == false) {
+        	echo '<div class="container">
+            	<div class="row text-left">
+            	The e-mail address is already in use<br>
+            	</div>
+            	</div>';
+            	header("Username is already in use</br>");
+    	header('Location: index.php?Message=2');
+    	exit;
+            $error = true;
+        } else {
     	echo "New records created successfully";
-    	echo '<meta http-equiv="refresh" content="0; URL=index.php">';	
+    	header('Location: index.php?Message=3');
+    	exit;
+    }
 	}
 	catch (PDOException $e) {
     	echo "Error: " . $e->getMessage();

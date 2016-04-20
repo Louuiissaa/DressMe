@@ -23,6 +23,25 @@
 
 	<link href="stylesheet.css" rel="stylesheet">
 
+  <?php
+    if(isset($_GET["Message"])){
+    $msgtype = $_GET["Message"];
+    $message = "";
+    switch($msgtype) {
+    case 1:
+      $message = "Sorry you need to be logged in!";
+      break;
+    case 2:
+      $message = "We\'re sorry your Username is already in use!";
+      break;
+    case 3:
+      $message = "Thank you for registration!";
+      break;
+    }
+      echo "<script type='text/javascript'>alert('$message');</script>";
+    }
+  ?>
+
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
@@ -48,7 +67,7 @@
                 </li>
                 <li><input type="password" placeholder="Password" name="password" class="form-control vertical-center">
                 </li>
-                <li><button type="submit" class="btn btn-default vertical-center" onclick="FensterOeffnen">Sign in</button>
+                <li><button type="submit" class="btn btn-default vertical-center" >Sign in</button>
                 </li>
             </ul>
         </div>
@@ -82,7 +101,7 @@
             </div>
             <div class="row">
               <div class=" col-sm-4 col-md-4">
-            	 <button type="submit" class="btn btn-lg pink-background left" onclick="FensterOeffnen">Sign Up &raquo;</button>
+            	 <button type="submit" class="btn btn-lg pink-background left" >Sign Up &raquo;</button>
               </div>
             </div>
           </div>
@@ -128,7 +147,6 @@
     <script src="../../dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-
 
 
 
