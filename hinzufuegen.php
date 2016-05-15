@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <meta name="author" content="Louisa Pabst">
+    <link rel="icon" href="favicon.ico">
 
     <title>DressMe</title>
 
@@ -111,14 +111,20 @@
             <div class="col-lg-12">
                 <fontDressMe>Hinzufügen<br/></fontDressMe>
                 <spanunterschrift>Hier kannst du neue Kleidungsstücke zu deinem Kleiderschrank hinzufügen:<br/><br/></spanunterschrift>
-                <form id="bootstrapTagsInputForm" class="form-horizontal" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data">
+                <!--form id="bootstrapTagsInputForm" class="form-horizontal" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data"-->
+                <form id="bootstrapTagsInputForm" class="form-horizontal" method="post" action="addpictoDB.php" enctype="multipart/form-data">
                     <div class="fluid-container border">
                     <div class="row">
+                    <div class="form-group">
+                                <div class="col-xs-8 col-sm-8">
+                                    <input type="text" placeholder="Name your clothes piece" name="clotheslabel" class="form-control" style="width: 24%;" />
+                                </div>
+                            </div>
                         <input type="file" name="img" size="60" style="border-radius: 3px;"><p><br/></p>
                         <p>Füge noch Tags passend zu deinem hochgeladenen Bild hinzu:</br></p>
                             <div class="form-group">
                                 <div class="col-xs-8 col-sm-8">
-                                    <input type="text" placeholder="Your Tags..." name="clothestags" class="form-control" data-role="tagsinput"/>
+                                    <input type="text" placeholder="Your Tags..." name="clothestags" class="form-control" data-role="tagsinput" style="width: 40%;"/>
                                 </div>
                             </div>
                         <input type="submit" class="btn btn-lg pink-background left" name="submit" value="Upload">
@@ -178,105 +184,7 @@ $(document).ready(function () {
         });
 });
 </script>
-     <?php
-        if (array_key_exists('img',$_FILES)) {
-
-            $path = 'src/wardrobe/images/';
-
-            //$uploaddir = 'src/wardrobe/images/';
-            $uploadfile = $path . basename($_FILES['img']['name']);
-
-            echo "<p>";
-
-            if (move_uploaded_file($_FILES['img']['tmp_name'], $uploadfile)) {
-                echo "File is valid, and was successfully uploaded.\n";
-            } else {
-                echo "Upload failed";
-            }
-
-        echo "</p>";
-        $tableBilder = "BILDER";
-        $tableTags = "TAGS";
-        $tableBT = "BILDERTAGS";
-
-        //Database Connection
-        include ("dbzugriff.php");
-
-        try {
-            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //Error Handling
-
-            //Create BILDER TABLE
-            $sql = "CREATE table IF NOT EXISTS $tableBilder(
-                    id INT( 11 ) AUTO_INCREMENT UNIQUE,
-                    imgpath VARCHAR (100) ,
-                    imgtype VARCHAR( 20 ) ,
-                    PRIMARY KEY ( id ));";
-            $db->exec($sql);
-            print("Created $tableBilder Table.\n");
-
-            //Create TAGS Table
-            $sql = "CREATE table IF NOT EXISTS $tableTags(
-                    id INT( 11 ) AUTO_INCREMENT UNIQUE ,
-                    tagname VARCHAR (50) UNIQUE ,
-                    PRIMARY KEY ( id ));";
-            $db->exec($sql);
-            print("Created $tableTags Table.\n");
-
-            //Create TAGS/BILDER TABLE
-            $sql = "CREATE table IF NOT EXISTS $tableBT(
-                    id_bilder INT( 11 ),
-                    id_tag INT(11) ,
-                    PRIMARY KEY ( id_bilder, id_tag ),
-                    FOREIGN KEY (id_bilder) REFERENCES $tableBilder (id),
-                    FOREIGN KEY (id_tag) REFERENCES $tableTags (id));";
-            $db->exec($sql);
-            print("Created $tableTags Table.\n");
-
-            //INSERT image into BILDER Table
-            $stmt = $db->prepare("INSERT INTO $tableBilder (imgpath, imgtype) 
-                VALUES (:path, :type)");
-
-            
     
-            $stmt->bindParam(':path', $path);
-            $stmt->bindParam(':type', $type);
-    
-            $tmpname = $_FILES['img']['tmp_name'];
-            $type = $_FILES['img']['type'];
-            $path = $uploadfile;
-            
-            $stmt->execute();
-            $lastidImg = $db->lastInsertId();
-            echo $lastidImg;
-
-
-        
-
-            //INSERT Tags
-            $tags = $_POST["clothestags"];
-            $tagname = explode(",", $tags);
-
-            for($i = 0; $i < count($tagname); ++$i){
-            $stmt = $db->prepare("INSERT INTO $tableTags (tagname) 
-                VALUES (:tagname)");
-    
-            $stmt->bindParam(':tagname', $tag);
-    
-            // insert a row
-            
-            $tag = $tagname[$i];
-            $stmt->execute();
-        }
-    
-            echo "New records created successfully"; 
-        }
-        catch (PDOException $e) {
-            echo "Error: " . $e->getMessage();
-        }
-        $db = null;
-        }
-    ?>
-
 
 
   </body>

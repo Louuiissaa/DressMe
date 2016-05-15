@@ -37,6 +37,12 @@
     case 3:
       $message = "Thank you for registration!";
       break;
+    case 4:
+      $message = "Dein Username oder Password ist falsch!";
+      break;
+    case 5:
+      $message = "Bitte gib deinen Username und Password ein!";
+      break;
     }
       echo "<script type='text/javascript'>alert('$message');</script>";
     }

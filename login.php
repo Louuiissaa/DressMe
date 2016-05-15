@@ -24,15 +24,13 @@ try {
             $_SESSION['username'] = $username;
             echo '<meta http-equiv="refresh" content="0; URL=start.php">'; 
         } else {
-            echo '<meta http-equiv="refresh" content="0; URL=index.php">';
-            echo '<script type="text/javascript"> alert("FDein Username oder Password ist falsch!");</script>'; 
+            header('Location: index.php?Message=4');
         }
     /*foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) { 
         echo $v;
     }*/
     }else{
-        echo '<meta http-equiv="refresh" content="0; URL=index.php">'; 
-        echo '<script type="text/javascript"> alert("Bitte gib deinen Username und Password ein!");</script>';
+        header('Location: index.php?Message=5');
     }
 }catch(PDOException $e) {
     echo "Error: " . $e->getMessage();

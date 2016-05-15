@@ -107,7 +107,7 @@
         <div class="row gallery-margin">
             <div class="col-xs-9 col-sm-3 col-md-3 portfolio-item gallery-margin">
                 <a href="#">
-                    <img class="img-responsive" src="img_get.php?id=1" alt="">
+                    <img class="img-responsive" src="<?php include "img_get.php";?>" alt="">
                 </a>
             </div>
             <div class="col-xs-9 col-sm-3 col-md-3 portfolio-item gallery-margin">
