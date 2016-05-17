@@ -173,6 +173,20 @@ spanunterschrift {
   }
 }
 
+.wrapper {
+    height:210px;
+    overflow:hidden;
+    width: 170px;
+}
+
+.wrapper img {
+    position: center;
+}
+
+.layoutleft {
+  margin-left: 15px;
+}
+
 
 /*Tags Input */
 .label-info {
